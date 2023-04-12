@@ -5,7 +5,7 @@ const PrimaryLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className='container mx-auto my-4 px-6'>{children}</main>
     </>
   );
 };
