@@ -1,11 +1,12 @@
 import PrimaryLayout from '@/components/PrimaryLayout';
+import React from 'react';
 
-const Home = () => {
+const Contact = () => {
   return (
     <PrimaryLayout>
-      <h1>Home</h1>
+      <h1>Contact</h1>
     </PrimaryLayout>
   );
 };
 
-export default Home;
+export default Contact;
