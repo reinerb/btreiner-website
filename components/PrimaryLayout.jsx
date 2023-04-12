@@ -1,7 +1,13 @@
 import React from 'react';
+import Header from './Header';
 
 const PrimaryLayout = ({ children }) => {
-  return <main>{children}</main>;
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  );
 };
 
 export default PrimaryLayout;
