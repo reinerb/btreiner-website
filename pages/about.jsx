@@ -7,12 +7,8 @@ const About = () => {
   return (
     <PrimaryLayout>
       <h1 className='text-4xl'>About Me</h1>
-      <div className='grid grid-cols-4 gap-8 items-center mt-8'>
-        <Image
-          src={benAndLibby}
-          alt='Picture of Ben'
-        />
-        <section className='col-span-3'>
+      <div className='grid lg:grid-cols-4 gap-8 lg:items-center mt-8'>
+        <section className='lg:order-2 lg:col-span-3'>
           <h2 className='text-2xl'>My Work</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem culpa,
@@ -36,6 +32,10 @@ const About = () => {
             odio accusantium incidunt.
           </p>
         </section>
+        <Image
+          src={benAndLibby}
+          alt='Picture of Ben'
+        />
       </div>
     </PrimaryLayout>
   );
