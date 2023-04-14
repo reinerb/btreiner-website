@@ -115,7 +115,7 @@ const ContactForm = ({ FORMSPREE_URL }) => {
 
   const thanks = (
     <p className='text-xl'>
-      Thank you for your response! I'll respond to you as soon as I can.
+      Thank you for your message! I'll respond to you as soon as I can.
     </p>
   );
 
