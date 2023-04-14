@@ -14,6 +14,10 @@ const ContactForm = () => {
     });
   };
 
+  // Repeated styles for form elements
+  const inputStyles =
+    'py-2 px-4 bg-zinc-200 dark:bg-zinc-800 border-2 border-zinc-500 focus-within:bg-zinc-300 focus-within:outline-zinc-950 dark:focus-within:bg-zinc-700 dark:focus-within:outline-zinc-50';
+
   return (
     <form className='grid lg:grid-cols-2 gap-6'>
       <div className='flex flex-col gap-1'>
@@ -25,7 +29,7 @@ const ContactForm = () => {
           name='name'
           value={formData.name}
           onChange={handleChange}
-          className='py-2 px-4 bg-zinc-200 dark:bg-zinc-800 border-2 border-zinc-500 focus-within:bg-zinc-300 focus-within:outline-zinc-950 dark:focus-within:bg-zinc-700 dark:focus-within:outline-zinc-50'
+          className={inputStyles}
         />
       </div>
       <div className='flex flex-col gap-1'>
@@ -37,7 +41,7 @@ const ContactForm = () => {
           name='email'
           value={formData.email}
           onChange={handleChange}
-          className='py-2 px-4 bg-zinc-200 dark:bg-zinc-800 border-2 border-zinc-500 focus-within:bg-zinc-300 focus-within:outline-zinc-950 dark:focus-within:bg-zinc-700 dark:focus-within:outline-zinc-50'
+          className={inputStyles}
         />
       </div>
       <div className='flex flex-col gap-1 lg:col-span-2'>
@@ -49,7 +53,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className='py-2 px-4 bg-zinc-200 dark:bg-zinc-800 border-2 border-zinc-500 focus-within:bg-zinc-300 focus-within:outline-zinc-950 dark:focus-within:bg-zinc-700 dark:focus-within:outline-zinc-50'
+          className={inputStyles}
         />
       </div>
       <button
