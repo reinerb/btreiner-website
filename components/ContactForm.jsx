@@ -1,11 +1,37 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const ContactForm = () => {
+const ContactForm = ({ FORMSPREE_URL }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
+
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      });
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } else {
+      setStatus({
+        ...status,
+        info: { error: true, msg: msg },
+      });
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -14,12 +40,34 @@ const ContactForm = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+    axios({
+      method: 'POST',
+      url: 'https://formspree.io/f/mvonvlvj',
+      data: formData,
+    })
+      .then((response) => {
+        handleServerResponse(
+          true,
+          'Thank you, your message has been submitted'
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // Repeated styles for form elements
   const inputStyles =
     'py-2 px-4 bg-zinc-200 dark:bg-zinc-800 border-2 border-zinc-500 focus-within:bg-zinc-300 focus-within:outline-zinc-950 dark:focus-within:bg-zinc-700 dark:focus-within:outline-zinc-50';
 
-  return (
-    <form className='grid lg:grid-cols-2 gap-6'>
+  const form = (
+    <form
+      className='grid lg:grid-cols-2 gap-6'
+      onSubmit={handleSubmit}
+    >
       <div className='flex flex-col gap-1'>
         <label htmlFor='name'>Name*</label>
         <input
@@ -64,6 +112,14 @@ const ContactForm = () => {
       </button>
     </form>
   );
+
+  const thanks = (
+    <p className='text-xl'>
+      Thank you for your response! I'll respond to you as soon as I can.
+    </p>
+  );
+
+  return status.submitted ? thanks : form;
 };
 
 export default ContactForm;
