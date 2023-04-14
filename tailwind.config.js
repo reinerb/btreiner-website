@@ -11,6 +11,9 @@ module.exports = {
         'site-layout': 'auto 1fr auto',
       },
     },
+    fontFamily: {
+      heading: ['Montserrat', 'sans-serif'],
+    },
   },
   plugins: [],
 };
