@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const ContactForm = ({ FORMSPREE_URL }) => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const ContactForm = ({ FORMSPREE_URL }) => {
     submitting: false,
     info: { error: false, msg: null },
   });
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleServerResponse = (ok, msg) => {
     if (ok) {
@@ -43,12 +46,21 @@ const ContactForm = ({ FORMSPREE_URL }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+
     try {
+      const token = await executeRecaptcha();
+
+      if (!token) {
+        handleServerResponse(false, 'Failed to get ReCaptcha token');
+        return;
+      }
+
       await axios({
         method: 'POST',
         url: '/api/contact',
-        data: { formData: formData },
+        data: { formData: formData, token: token },
       });
+
       handleServerResponse(true, 'Thank you, your message has been submited');
     } catch (err) {
       console.error(err);
