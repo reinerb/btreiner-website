@@ -11,10 +11,11 @@ export default async (req, res) => {
   const { formData } = req.body;
 
   try {
+    console.log(formData);
     await axios({
       method: 'POST',
       url: formspreeUrl,
-      message: formData,
+      data: formData,
     });
     res.status(200).json({ message: 'Success' });
   } catch (err) {

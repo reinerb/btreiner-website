@@ -40,23 +40,20 @@ const ContactForm = ({ FORMSPREE_URL }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-    axios({
-      method: 'POST',
-      url: 'https://formspree.io/f/mvonvlvj',
-      data: formData,
-    })
-      .then((response) => {
-        handleServerResponse(
-          true,
-          'Thank you, your message has been submitted'
-        );
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      await axios({
+        method: 'POST',
+        url: '/api/contact',
+        data: { formData: formData },
       });
+      handleServerResponse(true, 'Thank you, your message has been submited');
+    } catch (err) {
+      console.error(err);
+      handleServerResponse(false, 'Submission failure, please try again');
+    }
   };
 
   // Repeated styles for form elements
