@@ -9,7 +9,7 @@ const Contact = () => {
       reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
     >
       <PrimaryLayout>
-        <h1 className='text-4xl mb-4'>Contact Me</h1>
+        <h1>Contact Me</h1>
         <ContactForm />
       </PrimaryLayout>
     </GoogleReCaptchaProvider>
