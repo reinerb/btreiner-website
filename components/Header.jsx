@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import ColorModeSwitcher from './ColorModeSwitcher';
 
 const Header = () => {
   return (
@@ -25,6 +26,9 @@ const Header = () => {
           </li>
           <li className='hover:text-zinc-700 dark:hover:text-zinc-200'>
             <Link href='/contact'>Contact</Link>
+          </li>
+          <li>
+            <ColorModeSwitcher />
           </li>
         </ul>
       </nav>
