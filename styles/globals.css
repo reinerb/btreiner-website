@@ -15,8 +15,12 @@
   }
 }
 
+@layer base {
+  body {
+    @apply bg-zinc-50 dark:bg-zinc-800;
+  }
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: 'Noto Sans', sans-serif;
 }
