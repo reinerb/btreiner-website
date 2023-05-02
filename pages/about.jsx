@@ -7,15 +7,15 @@ import Link from 'next/link';
 const About = () => {
   return (
     <PrimaryLayout>
-      <h1 className='font-heading text-4xl font-bold'>About Me</h1>
-      <section className='mt-4 grid gap-8 lg:grid-cols-4'>
+      <h1>About Me</h1>
+      <article className='grid gap-8 lg:grid-cols-4'>
         <div className='lg:order-2 lg:col-span-3'>
           <section>
             <p>Hi! My name is Ben Reiner, and I am a freelance developer.</p>
           </section>
-          <section className='mt-3'>
-            <h2 className='font-heading text-2xl font-semibold'>My Work</h2>
-            <p className='mt-2'>
+          <section>
+            <h2>My Work</h2>
+            <p>
               I currently work with Jody Kotkin at{' '}
               <a
                 href='https://masscommunications.co/'
@@ -31,7 +31,7 @@ const About = () => {
               communicate effectively, manage projects in chaotic environments,
               and learn to use new technologies quickly.
             </p>
-            <p className='mt-2'>
+            <p>
               During the pandemic, I spent several months working with my
               church, both as a volunteer and a paid contractor, to maintain and
               upgrade their web presence and assist with running remote worship
@@ -40,7 +40,7 @@ const About = () => {
               services and church groups, whether through livestreams on YouTube
               or interactive sessions on Zoom.
             </p>
-            <p className='mt-2'>
+            <p>
               In my personal learning and work life, I have worked with a number
               of front-end technologies, including:
               <ul className='ml-8 list-disc'>
@@ -55,16 +55,16 @@ const About = () => {
               experiences. You can see some of my personal projects over on the{' '}
               <Link href='/projects'>Projects page</Link>.
             </p>
-            <p className='mt-2'>
+            <p>
               I graduated from Northeastern University in January 2016 with a
               Bachelors of Science in mathematics, cum laude.
             </p>
           </section>
-          <section className='mt-3'>
+          <section>
             <h2 className='font-heading text-2xl font-semibold'>
               My interests
             </h2>
-            <p className='mt-2'>
+            <p>
               I've been fascinated by tabletop games since I was a child. I have
               been playing <span className='italic'>Magic: the Gathering</span>{' '}
               since 2002, and have played at a tournament level since the early
@@ -89,7 +89,7 @@ const About = () => {
               </a>{' '}
               with my friends and my partner.
             </p>
-            <p className='mt-2'>
+            <p>
               I love being outside, whether it's birding around the state,
               walking along the river, or just putting my feet in the ocean.
             </p>
@@ -99,7 +99,7 @@ const About = () => {
           src={benAndLibby}
           alt='Picture of Ben'
         />
-      </section>
+      </article>
     </PrimaryLayout>
   );
 };

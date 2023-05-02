@@ -13,6 +13,7 @@ const ColorModeSwitcher = () => {
       onClick={() =>
         currentTheme === 'light' ? setTheme('dark') : setTheme('light')
       }
+      className='cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-200'
     />
   );
 };
