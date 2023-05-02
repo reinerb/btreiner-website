@@ -21,7 +21,6 @@ const About = () => {
                 href='https://masscommunications.co/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-sky-700 underline visited:text-sky-600 hover:no-underline dark:text-sky-300 dark:visited:text-sky-400'
               >
                 Mass Communications Concepts, LLC
               </a>{' '}
@@ -54,13 +53,7 @@ const About = () => {
               </ul>
               I'm passionate about making responsive, accessible user
               experiences. You can see some of my personal projects over on the{' '}
-              <Link
-                href='/projects'
-                className='text-sky-700 underline visited:text-sky-600 hover:no-underline dark:text-sky-300 dark:visited:text-sky-400'
-              >
-                Projects page
-              </Link>
-              .
+              <Link href='/projects'>Projects page</Link>.
             </p>
             <p className='mt-2'>
               I graduated from Northeastern University in January 2016 with a
@@ -83,7 +76,6 @@ const About = () => {
                 href='https://boardgamegeek.com/boardgame/162886/spirit-island'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-sky-700 underline visited:text-sky-600 hover:no-underline dark:text-sky-300 dark:visited:text-sky-400'
               >
                 Spirit Island
               </a>{' '}
@@ -92,7 +84,6 @@ const About = () => {
                 href='https://boardgamegeek.com/boardgame/266192/wingspan'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-sky-700 underline visited:text-sky-600 hover:no-underline dark:text-sky-300 dark:visited:text-sky-400'
               >
                 Wingspan
               </a>{' '}
